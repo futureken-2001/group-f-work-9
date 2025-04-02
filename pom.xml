@@ -11,6 +11,7 @@
     <modules>
         <module>PostgresConn</module>
         <module>UIManager</module>
+        <module>MainModule</module>
 
     </modules>
 
