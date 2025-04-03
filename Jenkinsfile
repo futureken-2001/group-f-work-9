@@ -16,8 +16,7 @@ pipeline{
              // Start PostgreSQL defined in docker-compose.yml and referenced .env for sensitive variables.
              bat 'docker-compose up -d'
 
-             // Wait for PostgreSQL to be fully ready.
-             bat 'sleep 10'
+
            }
          }
 
