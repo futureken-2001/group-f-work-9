@@ -29,7 +29,7 @@ public class Listener {
                             "Success", JOptionPane.INFORMATION_MESSAGE);
                     cardLayout.show(panel,"dash");
                 }else{
-                    JOptionPane.showMessageDialog(frame, "Login Failure!",
+                    JOptionPane.showMessageDialog(frame, "Invalid credentials!",
                             "Failure", JOptionPane.ERROR_MESSAGE);
                 }
 
@@ -64,8 +64,7 @@ public class Listener {
 
                     DatabaseConnect.insert_Data(Component.conn,Component.tableName,name,yearOfBirth,address,phoneNumber,email,password);
 
-                    JOptionPane.showMessageDialog(frame, "Operation completed successfully!",
-                            "Success", JOptionPane.INFORMATION_MESSAGE);
+
 
                     SignUp.nameTextField.setText("");
                     SignUp.email.setText("");
@@ -73,9 +72,12 @@ public class Listener {
                     SignUp.addressfield.setText("");
                     SignUp.password.setText("");
                     SignUp.confirmpassword.setText("");
+                    SignUp.yearofBirthField.setText("");
+                    JOptionPane.showMessageDialog(frame, "Operation completed successfully!",
+                            "Success", JOptionPane.INFORMATION_MESSAGE);
                     cardLayout.show(panel,"dash");
                 }else{
-                    JOptionPane.showMessageDialog(frame, "Operation Failed!",
+                    JOptionPane.showMessageDialog(frame, "check all fields before submission!",
                             "Failure", JOptionPane.ERROR_MESSAGE);
                 }
 
