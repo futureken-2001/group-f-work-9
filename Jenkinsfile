@@ -11,17 +11,17 @@ pipeline{
 
      stages{
 
-      stage('Start PostgreSQL') {
+        stage('Start PostgreSQL') {
            steps {
              // Start PostgreSQL defined in docker-compose.yml and referenced .env for sensitive variables.
              bat 'docker-compose up -d'
 
 
-           }
-         }
+            }
+             }
 
 
-         stage("Build"){
+           stage("Build"){
 
                  steps{
                      echo"Building the application"
@@ -51,7 +51,7 @@ pipeline{
 
            steps {
                withSonarQubeEnv("mySonar") {
-                  bat "mvn clean verify sonar:sonar -Dsonar.projectKey=group5Proj -Dsonar.projectName='group5Proj'"
+                  bat "mvn clean verify sonar:sonar -Dsonar.projectKey=group9Proj -Dsonar.projectName='group9Proj'"
                                 }
                       }
               post {
@@ -96,9 +96,25 @@ pipeline{
 
               }
 
-         }
+          stage('Shutdown PostgreSQL') {
+                    steps {
 
-    }
+                      bat 'docker-compose down'
+                    }
+                  }
+
+                   post {
+                      always {
+
+                        bat 'docker-compose down -v'
+                      }
+                    }
+
+
+
+     }
+
+}
 
 
 
