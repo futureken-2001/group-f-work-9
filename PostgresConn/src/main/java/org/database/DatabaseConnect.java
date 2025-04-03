@@ -48,13 +48,14 @@ public class DatabaseConnect {
         BirthYear = birthYear;
     }
 
-    public  static Connection dbConn(String dbName, String userName, String password){
+    public  static Connection dbConn(String dbName, String userName, String password, String tableName){
 
         Connection conn=null;
         try{
 
             Class.forName("org.postgresql.Driver");
             conn=DriverManager.getConnection("jdbc:postgresql://localhost:5432/"+dbName,userName,password);
+            createTable(conn, tableName);
 
         if(conn!=null)
         {

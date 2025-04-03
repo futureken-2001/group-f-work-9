@@ -30,6 +30,6 @@ public class Component {
         }
     }
 
-   public static final Connection conn=DatabaseConnect.dbConn(dbname,userName,password);
+   public static final Connection conn=DatabaseConnect.dbConn(dbname,userName,password,tableName);
 
     }
