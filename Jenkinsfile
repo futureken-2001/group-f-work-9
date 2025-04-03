@@ -51,7 +51,7 @@ pipeline{
 
            steps {
                withSonarQubeEnv("mySonar") {
-                  bat "mvn clean verify sonar:sonar -Dsonar.projectKey=group5Proj -Dsonar.projectName='group5Proj'"
+                  bat "mvn clean verify sonar:sonar -Dsonar.projectKey=group9Proj -Dsonar.projectName='group9Proj'"
                                 }
                       }
               post {
