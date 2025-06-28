@@ -4,6 +4,7 @@ pipeline{
     // agent {
     //     label 'docker-agent'
     // }
+    agent any
      tools{
         maven "myMaven"
     }
